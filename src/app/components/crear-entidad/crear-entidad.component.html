@@ -1,0 +1,61 @@
+<h2>Crear Entidad</h2>
+
+<div class="form-group">
+  <label>NIT:</label>
+  <input [(ngModel)]="entidad.nit" type="text" />
+</div>
+
+<div class="form-group">
+  <label>Nombre:</label>
+  <input [(ngModel)]="entidad.nombre" type="text" />
+</div>
+
+<hr />
+
+<h3>Agregar Contrato</h3>
+
+<div class="form-group">
+  <label>Valor:</label>
+  <input [(ngModel)]="contratoActual.valor" type="number" />
+</div>
+
+<div class="form-group">
+  <label>Nombre Contratista:</label>
+  <input [(ngModel)]="contratoActual.nombreContratista" type="text" />
+</div>
+
+<div class="form-group">
+  <label>Documento Contratista:</label>
+  <input [(ngModel)]="contratoActual.documentoContratista" type="text" />
+</div>
+
+<div class="form-group">
+  <label>Nombre Contratante:</label>
+  <input [(ngModel)]="contratoActual.nombreContratante" type="text" />
+</div>
+
+<div class="form-group">
+  <label>Documento Contratante:</label>
+  <input [(ngModel)]="contratoActual.documentoContratante" type="text" />
+</div>
+
+<div class="form-group">
+  <label>Fecha Inicio:</label>
+  <input [(ngModel)]="contratoActual.fechaInicio" type="date" />
+</div>
+
+<div class="form-group">
+  <label>Fecha Final:</label>
+  <input [(ngModel)]="contratoActual.fechaFinal" type="date" />
+</div>
+
+<button class="btn primary" (click)="agregarContrato()">Agregar Contrato</button>
+
+<h4>Contratos Agregados:</h4>
+<ul>
+  <li *ngFor="let c of entidad.contratos">
+    {{ c.nombreContratista }} ({{ c.valor }} pesos)
+  </li>
+</ul>
+
+<button class="btn success" (click)="guardarEntidad()">Guardar Entidad</button>

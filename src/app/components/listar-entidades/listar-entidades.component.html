@@ -1,0 +1,18 @@
+<h2>Lista de Entidades</h2>
+
+<div *ngFor="let entidad of entidades" class="card">
+  <h3>{{ entidad.nombre }}</h3>
+  <p><strong>NIT:</strong> {{ entidad.nit }}</p>
+
+  <h4>Contratos:</h4>
+  <ul>
+    <li *ngFor="let contrato of entidad.contratos">
+      <div class="contrato">
+        <strong>{{ contrato.nombreContratista }}</strong> contratado por
+        <strong>{{ contrato.nombreContratante }}</strong><br />
+        Valor: {{ contrato.valor | currency:'COP' }}<br />
+        Vigencia: {{ contrato.fechaInicio }} a {{ contrato.fechaFinal }}
+      </div>
+    </li>
+  </ul>
+</div>
